@@ -1,12 +1,13 @@
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin-right: 12px;
   transition: 100ms linear;
 
   &.l {
-    width: 64px;
-    height: 64px;
+    width: 44px;
+    height: 44px;
+    transition: 100ms linear;
   }
 
   &:last-child {
