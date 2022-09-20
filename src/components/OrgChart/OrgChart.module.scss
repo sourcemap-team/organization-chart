@@ -1,0 +1,19 @@
+.chartWrapper {
+  display: flex;
+  height: 100%;
+  gap: 16px;
+}
+
+.wrapperClass {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.controlBtn {
+  cursor: pointer;
+  margin-left: 12px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  border-radius: 12px;
+}

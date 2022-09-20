@@ -1,0 +1,26 @@
+.card {
+  border-radius: 12px;
+  padding: 16px;
+  background: #FFFFFF;
+  width: 220px;
+
+  h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    color: #202020;
+    margin: 0;
+  }
+
+  .groups {
+    margin-top: 24px;
+  }
+
+  .users {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px auto;
+  }
+}
