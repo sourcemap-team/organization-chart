@@ -16,6 +16,7 @@ import {
 import { MOCK_DATA } from '../../constants/OrgStructure';
 
 export const OrgChart = () => {
+  const { leadership, ...team } = MOCK_DATA;
   return (
     <TransformWrapper
       initialScale={INITIAL_SCALE}
@@ -30,9 +31,19 @@ export const OrgChart = () => {
       {(transformProps) => (
         <React.Fragment>
           <TransformActions transformProps={transformProps} />
-          <TransformComponent wrapperClass={styles.wrapperClass}>
+          <TransformComponent
+            wrapperClass={styles.wrapperClass}
+            contentClass={styles.contentClass}
+          >
+            <div className={styles.leaderShip}>
+              <TeamCard
+                id={'leadership'}
+                data={leadership}
+                transformProps={transformProps}
+              />
+            </div>
             <div className={styles.chartWrapper}>
-              {Object.keys(MOCK_DATA).map((teamKey) => (
+              {Object.keys(team).map((teamKey) => (
                 <TeamCard
                   id={teamKey}
                   key={teamKey}

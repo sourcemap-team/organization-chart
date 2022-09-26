@@ -6,7 +6,9 @@ import { MAX_SCALE } from '../../constants/TransformParams';
 import { UsersGroup } from '../UsersGroup/UsersGroup';
 
 export const TeamCard = ({ id, data, transformProps }) => {
+  const { settings, users, title, groups } = data;
   const { zoomToElement, resetTransform } = transformProps;
+  const { background } = settings;
 
   const hasUsers = !!data.users;
 
@@ -19,11 +21,16 @@ export const TeamCard = ({ id, data, transformProps }) => {
   };
 
   return (
-    <div id={id} className={cx(styles.card)} onDoubleClick={handleDoubleClick}>
-      <h3>{data.title}</h3>
+    <div
+      id={id}
+      className={cx(styles.card, styles[size])}
+      onDoubleClick={handleDoubleClick}
+      style={{ backgroundColor: background }}
+    >
+      <h3>{title}</h3>
       <div className={styles.users}>
         {hasUsers
-          ? data.users.map((user) => (
+          ? users.map((user) => (
               <UserAvatar
                 key={user.id}
                 user={user}
@@ -33,7 +40,7 @@ export const TeamCard = ({ id, data, transformProps }) => {
           : null}
       </div>
       <div className={styles.groups}>
-        {data.groups?.map((group) => (
+        {groups?.map((group) => (
           <UsersGroup
             key={group.id}
             title={group.title}

@@ -2,12 +2,16 @@
   width: 24px;
   height: 24px;
   margin-right: 12px;
-  transition: 100ms linear;
 
   &.l {
-    width: 44px;
-    height: 44px;
-    transition: 100ms linear;
+    padding: 12px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    text-align: center;
+    width: 124px;
+    height: 174px;
+    box-sizing: border-box;
+
   }
 
   &:last-child {
@@ -15,8 +19,30 @@
   }
 
   img {
-    border-radius: 100%;
     width: 100%;
-    height: 100%;
+    border-radius: 100%;
+  }
+}
+
+.info {
+  margin-top: 16px;
+  text-align: left;
+
+  .userName {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #202020;
+  }
+
+  .role {
+    margin-top: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #8F8F8F;
   }
 }

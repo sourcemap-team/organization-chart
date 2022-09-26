@@ -8,6 +8,14 @@
   width: 100% !important;
   height: 100% !important;
 }
+.contentClass {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderShip {
+  margin-bottom: 16px;
+}
 
 .controlBtn {
   cursor: pointer;
