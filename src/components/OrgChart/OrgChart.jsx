@@ -23,10 +23,11 @@ export const OrgChart = () => {
       centerZoomedOut
       minScale={MIN_SCALE}
       maxScale={MAX_SCALE}
+      centerOnInit
       wheel={{
         step: ZOOM_STEP,
       }}
-      zoomAnimation={{ disabled: true }}
+      zoomAnimation={{ disabled: false, size: MIN_SCALE }}
     >
       {(transformProps) => (
         <React.Fragment>

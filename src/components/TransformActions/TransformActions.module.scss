@@ -1,7 +1,7 @@
 .actions {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +10,9 @@
 }
 
 .controlBtn {
-  width: 64px;
-  height: 64px;
+  border: none;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 0 8px #00000045;
 }
