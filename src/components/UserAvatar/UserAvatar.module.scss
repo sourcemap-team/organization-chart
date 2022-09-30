@@ -1,16 +1,13 @@
 .avatar {
-  width: 24px;
-  height: 24px;
+  width: 80px;
+  height: 120px;
 
   &.l {
     padding: 8px;
     background: #FFFFFF;
     border-radius: 12px;
     text-align: center;
-    width: 80px;
-    height: 120px;
     box-sizing: border-box;
-
   }
 
   &:last-child {

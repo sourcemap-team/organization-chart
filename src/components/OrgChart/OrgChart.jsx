@@ -21,6 +21,7 @@ export const OrgChart = () => {
     <TransformWrapper
       initialScale={INITIAL_SCALE}
       centerZoomedOut
+      centerOnInit
       minScale={MIN_SCALE}
       maxScale={MAX_SCALE}
       wheel={{
