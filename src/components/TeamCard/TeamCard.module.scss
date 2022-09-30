@@ -4,10 +4,6 @@
   background: #FFFFFF;
   width: 220px;
 
-  &.l {
-    width: 100%;
-  }
-
   h3 {
     font-style: normal;
     font-weight: 700;
@@ -25,6 +21,8 @@
   .users {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     margin: 24px auto;
+    gap: 16px
   }
 }

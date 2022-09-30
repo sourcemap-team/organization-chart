@@ -23,7 +23,6 @@ export const OrgChart = () => {
       centerZoomedOut
       minScale={MIN_SCALE}
       maxScale={MAX_SCALE}
-      centerOnInit
       wheel={{
         step: ZOOM_STEP,
       }}

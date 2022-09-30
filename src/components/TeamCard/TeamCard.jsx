@@ -17,7 +17,7 @@ export const TeamCard = ({ id, data, transformProps }) => {
   const size = hasBigSize ? 'l' : 'm';
 
   const handleDoubleClick = () => {
-    return hasBigSize ? resetTransform() : zoomToElement(id, MAX_SCALE);
+    return hasBigSize ? resetTransform() : zoomToElement(id, MAX_SCALE, 500);
   };
 
   return (
