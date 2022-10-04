@@ -2,7 +2,9 @@
   background: #FFFFFF;
   border-radius: 12px;
   padding: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  transition: ease-in 200ms;
+  will-change: height;
 
   h4 {
     font-style: normal;
@@ -13,9 +15,25 @@
     color: #202020;
     margin: 0 0 4px 0;
   }
+
+
+  &.s {
+    height: 120px;
+  }
+
+
+  &.m {
+    height: 400px;
+  }
+
+
+  &.l {
+    height: 600px;
+  }
 }
 
 .group {
+  width: 200px;
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }

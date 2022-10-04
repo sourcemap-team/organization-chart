@@ -1,10 +1,26 @@
 import styles from './UsersGroup.module.scss';
-import React from 'react';
+import cx from 'classnames';
+import React, { useState } from 'react';
 import { UserAvatar } from '../UserAvatar/UserAvatar';
+import { getScaleSizeClassNameByScale } from '../../utils/scale';
+import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 
 export const UsersGroup = ({ title, users, transformProps }) => {
+  const { scale } = transformProps.state;
+  const [classNameSize, setClassNameSize] = useState(
+    getScaleSizeClassNameByScale(scale)
+  );
+
+  useDebouncedEffect(
+    () => {
+      setClassNameSize(getScaleSizeClassNameByScale(scale));
+    },
+    [scale],
+    100
+  );
+
   return (
-    <div className={styles.groupWrapper}>
+    <div className={cx(styles.groupWrapper, styles[classNameSize])}>
       <h4>{title}</h4>
       <div className={styles.group}>
         {users &&

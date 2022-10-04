@@ -12,6 +12,7 @@ import {
   MAX_SCALE,
   ZOOM_STEP,
   INITIAL_SCALE,
+  DOUBLE_CLICK_STEP,
 } from '../../constants/TransformParams';
 import { MOCK_DATA } from '../../constants/OrgStructure';
 
@@ -27,7 +28,10 @@ export const OrgChart = () => {
       wheel={{
         step: ZOOM_STEP,
       }}
-      zoomAnimation={{ disabled: false, size: MIN_SCALE }}
+      doubleClick={{
+        step: DOUBLE_CLICK_STEP,
+      }}
+      zoomAnimation={{ disabled: false, size: DOUBLE_CLICK_STEP }}
     >
       {(transformProps) => (
         <React.Fragment>

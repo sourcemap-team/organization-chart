@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import styles from './UserAvatar.module.scss';
-import { MAX_SCALE } from '../../constants/TransformParams';
+import { SIZES } from '../../constants/TransformParams';
+import { getScaleSizeClassNameByScale } from '../../utils/scale';
+import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 
 export const UserAvatar = ({ user, transformProps }) => {
-  const hasBigSize = transformProps.state.scale >= MAX_SCALE;
+  const { scale } = transformProps.state;
+  const showUserInfo = scale > SIZES.S;
+  const [classNameSize, setClassNameSize] = useState(
+    getScaleSizeClassNameByScale(scale)
+  );
 
-  const size = hasBigSize ? 'l' : 'm';
+  useDebouncedEffect(
+    () => {
+      setClassNameSize(getScaleSizeClassNameByScale(scale));
+    },
+    [scale],
+    100
+  );
+
   return (
-    <div className={cx(styles.avatar, styles[size])}>
+    <div className={cx(styles.avatar, styles[classNameSize])}>
       <img src={user.pic} alt={user.userName} />
-      {hasBigSize && (
+      {showUserInfo && (
         <div className={styles.info}>
           <div className={styles.userName}>{user.userName}</div>
           <div className={styles.role}>{user.role}</div>
