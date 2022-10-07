@@ -1,9 +1,22 @@
 .groupWrapper {
   border-radius: 12px;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   transition: ease-in 200ms;
   will-change: height;
+
+
+  &.m {
+    margin-bottom: 12px;
+  }
+
+  &.l {
+    margin-bottom: 20px;
+  }
+
+  &.hidden {
+    height: 100%;
+  }
 
   &.gray {
     background: #F7F7F7;
@@ -29,13 +42,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .users {
-    gap: 8px;
-    width: 200px;
-    display: flex;
-    margin-bottom: 24px;
-  }
 }
 
 .groupsWrapper {

@@ -1,0 +1,29 @@
+.users {
+  gap: 4px;
+  display: flex;
+  margin-bottom: 8px;
+  justify-content: center;
+
+
+  &.s {
+    margin-bottom: 8px;
+  }
+
+  &.m {
+    margin-bottom: 16px;
+  }
+
+  &.l {
+    margin-bottom: 24px;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #FFFFFF;
+}

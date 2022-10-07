@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { getScaleSizeClassNameByScale } from '../../utils/scale';
 import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
+import { SIZES } from '../../constants/TransformParams';
+import { Users } from '../Users/Users';
 
 export const UsersGroup = ({ title, users, groups, transformProps, deep }) => {
   const { scale } = transformProps.state;
@@ -21,24 +23,23 @@ export const UsersGroup = ({ title, users, groups, transformProps, deep }) => {
 
   const theme = deep % 2 === 1 ? 'gray' : 'white';
 
+  const isNestedGroup = deep > 0;
+
+  const groupCollapseClassName =
+    isNestedGroup && scale >= SIZES.M ? 'expanded' : 'hidden';
+
   return (
     <div
-      className={cx(styles.groupWrapper, styles[classNameSize], styles[theme])}
+      className={cx(
+        styles.groupWrapper,
+        styles[classNameSize],
+        styles[theme],
+        styles[groupCollapseClassName]
+      )}
     >
       <h4>{title}</h4>
       <div className={styles.group}>
-        <div className={styles.users}>
-          {users &&
-            users.map((user) => {
-              return (
-                <UserAvatar
-                  key={user.id}
-                  user={user}
-                  transformProps={transformProps}
-                />
-              );
-            })}
-        </div>
+        <Users users={users} transformProps={transformProps} />
         <div className={styles.groupsWrapper}>
           {groups &&
             groups.map((group) => (

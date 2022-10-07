@@ -7,7 +7,7 @@ import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 
 export const UserAvatar = ({ user, transformProps }) => {
   const { scale } = transformProps.state;
-  const showUserInfo = scale > SIZES.S;
+  const showUserInfo = scale >= SIZES.M;
   const [classNameSize, setClassNameSize] = useState(
     getScaleSizeClassNameByScale(scale)
   );

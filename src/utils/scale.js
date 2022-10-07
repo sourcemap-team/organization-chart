@@ -19,7 +19,7 @@ export const getScaleSizeClassNameByScale = (scale) => {
     return classNameSizesMap[SIZES.L];
   }
 
-  if (scale === SIZES.L) {
+  if (scale >= SIZES.L) {
     return classNameSizesMap[SIZES.L];
   }
 

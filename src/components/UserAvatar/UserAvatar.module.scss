@@ -1,6 +1,6 @@
 .avatar {
-  width: 80px;
-  padding: 8px;
+  width: 40px;
+  padding: 4px;
   border-radius: 12px;
   box-sizing: border-box;
   text-align: center;
@@ -9,11 +9,17 @@
   justify-content: space-between;
   transition: ease-in 300ms;
 
-  &.m {
+
+  .m {
+    padding: 8px;
+    width: 60px;
     background: #FFFFFF;
   }
 
+
   &.l {
+    padding: 12px;
+    width: 80px;
     background: #FFFFFF;
   }
 
