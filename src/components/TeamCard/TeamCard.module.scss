@@ -16,8 +16,9 @@
   }
 
   .groups {
-    justify-content: space-between;
-    width: 460px;
+    justify-content: center;
+    gap: 24px;
+    width: 520px;
     display: flex;
     margin-top: 24px;
     flex-wrap: wrap;
@@ -26,8 +27,8 @@
   .users {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 0 auto 24px;
-    gap: 16px
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
   }
 }

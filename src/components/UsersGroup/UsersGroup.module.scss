@@ -1,10 +1,17 @@
 .groupWrapper {
-  background: #FFFFFF;
   border-radius: 12px;
   padding: 12px;
   margin-bottom: 12px;
   transition: ease-in 200ms;
   will-change: height;
+
+  &.gray {
+    background: #F7F7F7;
+  }
+
+  &.white {
+    background: #FFFFFF;
+  }
 
   h4 {
     font-style: normal;
@@ -14,26 +21,24 @@
     letter-spacing: -0.03em;
     color: #202020;
     margin: 0 0 4px 0;
-  }
-
-
-  &.s {
-    height: 120px;
-  }
-
-
-  &.m {
-    height: 400px;
-  }
-
-
-  &.l {
-    height: 600px;
+    text-align: center;
   }
 }
 
 .group {
-  width: 200px;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+
+  .users {
+    gap: 8px;
+    width: 200px;
+    display: flex;
+    margin-bottom: 24px;
+  }
+}
+
+.groupsWrapper {
+  display: flex;
+  gap: 16px;
 }

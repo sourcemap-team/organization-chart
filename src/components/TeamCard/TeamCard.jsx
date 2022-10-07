@@ -56,8 +56,10 @@ export const TeamCard = ({ id, data, transformProps }) => {
           {groups?.map((group) => (
             <UsersGroup
               key={group.id}
+              deep={0}
               title={group.title}
               users={group.users}
+              groups={group.groups}
               transformProps={transformProps}
             />
           ))}

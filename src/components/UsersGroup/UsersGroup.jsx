@@ -5,7 +5,7 @@ import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { getScaleSizeClassNameByScale } from '../../utils/scale';
 import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 
-export const UsersGroup = ({ title, users, transformProps }) => {
+export const UsersGroup = ({ title, users, groups, transformProps, deep }) => {
   const { scale } = transformProps.state;
   const [classNameSize, setClassNameSize] = useState(
     getScaleSizeClassNameByScale(scale)
@@ -19,20 +19,39 @@ export const UsersGroup = ({ title, users, transformProps }) => {
     100
   );
 
+  const theme = deep % 2 === 1 ? 'gray' : 'white';
+
   return (
-    <div className={cx(styles.groupWrapper, styles[classNameSize])}>
+    <div
+      className={cx(styles.groupWrapper, styles[classNameSize], styles[theme])}
+    >
       <h4>{title}</h4>
       <div className={styles.group}>
-        {users &&
-          users.map((user) => {
-            return (
-              <UserAvatar
-                key={user.id}
-                user={user}
+        <div className={styles.users}>
+          {users &&
+            users.map((user) => {
+              return (
+                <UserAvatar
+                  key={user.id}
+                  user={user}
+                  transformProps={transformProps}
+                />
+              );
+            })}
+        </div>
+        <div className={styles.groupsWrapper}>
+          {groups &&
+            groups.map((group) => (
+              <UsersGroup
+                key={group.id}
+                title={group.title}
+                users={group.users}
+                deep={deep + 1}
+                groups={group.groups}
                 transformProps={transformProps}
               />
-            );
-          })}
+            ))}
+        </div>
       </div>
     </div>
   );
