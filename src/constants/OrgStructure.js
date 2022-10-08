@@ -126,7 +126,6 @@ export const MOCK_DATA = {
                 pic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyc3xlbnwwfHwwfHw%3D&w=1000&q=80',
                 role: 'Design',
               },
-
               {
                 id: 7,
                 userName: 'Ivan Inav',

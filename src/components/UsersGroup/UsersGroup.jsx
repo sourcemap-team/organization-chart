@@ -23,19 +23,9 @@ export const UsersGroup = ({ title, users, groups, transformProps, deep }) => {
 
   const theme = deep % 2 === 1 ? 'gray' : 'white';
 
-  const isNestedGroup = deep > 0;
-
-  const groupCollapseClassName =
-    isNestedGroup && scale >= SIZES.M ? 'expanded' : 'hidden';
-
   return (
     <div
-      className={cx(
-        styles.groupWrapper,
-        styles[classNameSize],
-        styles[theme],
-        styles[groupCollapseClassName]
-      )}
+      className={cx(styles.groupWrapper, styles[classNameSize], styles[theme])}
     >
       <h4>{title}</h4>
       <div className={styles.group}>
