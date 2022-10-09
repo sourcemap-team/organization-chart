@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import styles from './TeamCard.module.scss';
-import { MAX_SCALE, SIZES } from '../../constants/TransformParams';
+import { LARGE_SCALE, SIZES } from '../../constants/TransformParams';
 import { UsersGroup } from '../UsersGroup/UsersGroup';
 import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 import { getScaleSizeClassNameByScale } from '../../utils/scale';
@@ -19,7 +19,7 @@ export const TeamCard = ({ id, data, transformProps }) => {
   const handleDoubleClick = () => {
     return scale >= SIZES.M
       ? resetTransform()
-      : zoomToElement(id, MAX_SCALE, 500);
+      : zoomToElement(id, LARGE_SCALE, 300);
   };
 
   useDebouncedEffect(

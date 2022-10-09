@@ -35,7 +35,7 @@ export const OrgChart = () => {
     >
       {(transformProps) => (
         <React.Fragment>
-          <TransformActions transformProps={transformProps} />
+          <TransformActions data={MOCK_DATA} transformProps={transformProps} />
           <TransformComponent
             wrapperClass={styles.wrapperClass}
             contentClass={styles.contentClass}

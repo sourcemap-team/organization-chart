@@ -9,6 +9,24 @@
   gap: 8px;
 }
 
+.teamNavigator {
+  position: fixed;
+  top: 84px;
+  left: 24px;
+  display: flex;
+  z-index: 10000;
+  gap: 8px;
+
+  .teamLabel {
+    padding: 12px;
+    cursor: pointer;
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgb(0 0 0 / 15%);
+  }
+}
+
 .controlBtn {
   cursor: pointer;
   background: #ffffff;
