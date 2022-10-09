@@ -17,11 +17,9 @@
   }
 
   .groups {
-    justify-content: center;
-    gap: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: repeat(2, 50%);
   }
 }
