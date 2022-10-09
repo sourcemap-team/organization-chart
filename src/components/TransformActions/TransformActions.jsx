@@ -3,11 +3,14 @@ import React from 'react';
 import { LARGE_SCALE } from '../../constants/TransformParams';
 
 export const TransformActions = ({ transformProps, data }) => {
-  const { zoomToElement } = transformProps;
+  const { zoomToElement, zoomIn } = transformProps;
   const teamIds = Object.keys(data);
 
   const moveToTeamCard = (teamId) => {
-    zoomToElement(teamId, LARGE_SCALE, 400);
+    zoomIn(LARGE_SCALE, 100);
+    setTimeout(() => {
+      zoomToElement(teamId, LARGE_SCALE, 200);
+    }, 200);
   };
 
   return (
