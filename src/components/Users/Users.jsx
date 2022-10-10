@@ -18,11 +18,11 @@ export const Users = ({ users, transformProps }) => {
     }
 
     if (classNameSize === SIZES_VALUES.M) {
-      return 6;
+      return users?.length || 0;
     }
 
     if (classNameSize === SIZES_VALUES.L) {
-      return 12;
+      return users?.length || 0;
     }
   };
 
