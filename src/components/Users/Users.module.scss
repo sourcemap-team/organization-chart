@@ -1,21 +1,23 @@
 .users {
   gap: 4px;
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 8px;
   justify-content: center;
 
 
   &.s {
     margin-bottom: 8px;
+
   }
 
   &.m {
     margin-bottom: 16px;
+    flex-wrap: wrap;
   }
 
   &.l {
     margin-bottom: 24px;
+    flex-wrap: wrap;
   }
 }
 
