@@ -6,7 +6,7 @@ import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { SIZES_VALUES } from '../../constants/TransformParams';
 
-export const Users = ({ users, transformProps }) => {
+export const Users = ({ users, transformProps, hierarchical }) => {
   const { scale } = transformProps.state;
   const [classNameSize, setClassNameSize] = useState(
     getScaleSizeClassNameByScale(scale)
@@ -40,7 +40,13 @@ export const Users = ({ users, transformProps }) => {
   const hiddenUsersCount = users ? users.length - visibleUsers.length : 0;
 
   return (
-    <div className={cx(styles.users, styles[classNameSize])}>
+    <div
+      className={cx(
+        styles.users,
+        styles[classNameSize],
+        hierarchical && styles.hierarchical
+      )}
+    >
       {visibleUsers &&
         visibleUsers.map((user) => {
           return (

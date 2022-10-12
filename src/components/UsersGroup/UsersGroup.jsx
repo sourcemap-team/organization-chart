@@ -1,13 +1,18 @@
 import styles from './UsersGroup.module.scss';
 import cx from 'classnames';
 import React, { useState } from 'react';
-import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { getScaleSizeClassNameByScale } from '../../utils/scale';
 import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
-import { SIZES } from '../../constants/TransformParams';
 import { Users } from '../Users/Users';
 
-export const UsersGroup = ({ title, users, groups, transformProps, deep }) => {
+export const UsersGroup = ({
+  title,
+  users,
+  groups,
+  transformProps,
+  hierarchical,
+  deep,
+}) => {
   const { scale } = transformProps.state;
   const [classNameSize, setClassNameSize] = useState(
     getScaleSizeClassNameByScale(scale)
@@ -34,6 +39,7 @@ export const UsersGroup = ({ title, users, groups, transformProps, deep }) => {
           {groups &&
             groups.map((group) => (
               <UsersGroup
+                hierarchical={hierarchical}
                 key={group.id}
                 title={group.title}
                 users={group.users}

@@ -22,7 +22,10 @@ export const UserAvatar = ({ user, transformProps }) => {
 
   return (
     <div className={cx(styles.avatar, styles[classNameSize])}>
-      <img src={user.pic} alt={user.userName} />
+      <img
+        src={`https://randomuser.me/api/portraits/men/${user.id}.jpg`}
+        alt={user.userName}
+      />
       {showUserInfo && (
         <div className={styles.info}>
           <div className={styles.userName}>{user.userName}</div>

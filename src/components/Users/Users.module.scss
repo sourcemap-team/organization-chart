@@ -4,6 +4,10 @@
   margin-bottom: 8px;
   justify-content: center;
 
+  &.hierarchical {
+    margin-bottom: 0 !important;
+  }
+
 
   &.s {
     margin-bottom: 8px;
