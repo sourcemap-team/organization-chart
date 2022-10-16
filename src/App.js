@@ -1,15 +1,15 @@
 import React from 'react';
-import styles from './App.module.scss';
+import './styles/app.scss';
 
 import { OrgChart } from './components/OrgChart/OrgChart';
 
 function App() {
   return (
-    <div className={styles.app}>
-      <div className={styles.header}>
+    <div className="app">
+      <div className="header">
         <h1>Team</h1>
       </div>
-      <div className={styles.chartWrapper}>
+      <div className="chartWrapper">
         <OrgChart />
       </div>
     </div>
