@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import cx from 'classnames';
-import styles from './UserAvatar.module.scss';
+
+import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 import { SIZES } from '../../constants/TransformParams';
 import { getScaleSizeClassNameByScale } from '../../utils/scale';
-import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
+
+import styles from './UserAvatar.module.scss';
 
 export const UserAvatar = ({ user, transformProps }) => {
   const { scale } = transformProps.state;
@@ -11,6 +13,16 @@ export const UserAvatar = ({ user, transformProps }) => {
   const [classNameSize, setClassNameSize] = useState(
     getScaleSizeClassNameByScale(scale)
   );
+
+  const jsxUserName = useMemo(() => {
+    const [first, last] = user.userName.split(' ');
+    return (
+      <>
+        <span>{first}</span>
+        <span>{last}</span>
+      </>
+    );
+  }, [user]);
 
   useDebouncedEffect(
     () => {
@@ -28,7 +40,7 @@ export const UserAvatar = ({ user, transformProps }) => {
       />
       {showUserInfo && (
         <div className={styles.info}>
-          <div className={styles.userName}>{user.userName}</div>
+          <div className={styles.userName}>{jsxUserName}</div>
           <div className={styles.role}>{user.role}</div>
         </div>
       )}
