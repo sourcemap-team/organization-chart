@@ -1,0 +1,32 @@
+@mixin font-options {
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  @include font-options;
+  font-family: Manrope;
+  font-weight: 700;
+  src: url('/assets/fonts/Manrope-Bold.ttf') format('woff');
+}
+
+@font-face {
+  @include font-options;
+  font-family: Manrope;
+  font-weight: 600;
+  src: url('/assets/fonts/Manrope-SemiBold.ttf') format('woff');
+}
+
+@font-face {
+  @include font-options;
+  font-family: Manrope;
+  font-weight: 500;
+  src: url('/assets/fonts/Manrope-Medium.ttf') format('woff');
+}
+
+@font-face {
+  @include font-options;
+  font-family: Manrope;
+  font-weight: 400;
+  src: url('/assets/fonts/Manrope-SemiBold.ttf') format('woff');
+}
