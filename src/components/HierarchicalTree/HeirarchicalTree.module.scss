@@ -1,0 +1,27 @@
+.node {
+  padding: 20px 20px 5px;
+
+  &:first-child {
+    border-radius: 12px 0 0 12px;
+  }
+
+  &:last-child {
+    border-radius: 0 12px 12px 0;
+  }
+}
+
+.product {
+  background: #cdefc5;
+}
+
+.data {
+  background: #ffe287;
+}
+
+.support {
+  background: #ff9e72;
+}
+
+.marketing {
+  background: #e3d1f5;
+}

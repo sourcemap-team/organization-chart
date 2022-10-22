@@ -1,10 +1,7 @@
 import React from 'react';
-
-import styles from './OrgChart.module.scss';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import { TransformActions } from '../TransformActions/TransformActions';
-
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import { TeamCard } from '../TeamCard/TeamCard';
 import {
@@ -14,10 +11,12 @@ import {
   INITIAL_SCALE,
   DOUBLE_CLICK_STEP,
 } from '../../constants/TransformParams';
-import { MOCK_DATA } from '../../constants/OrgStructure';
+import { MOCK_DATA, GroupTitles } from '../../constants/OrgStructure';
+
+import styles from './OrgChart.module.scss';
 
 export const OrgChart = () => {
-  const { leadership, ...team } = MOCK_DATA;
+  const { leadership } = MOCK_DATA;
   return (
     <TransformWrapper
       initialScale={INITIAL_SCALE}
@@ -34,31 +33,34 @@ export const OrgChart = () => {
       zoomAnimation={{ disabled: false, size: DOUBLE_CLICK_STEP }}
     >
       {(transformProps) => (
-        <React.Fragment>
-          <TransformActions data={MOCK_DATA} transformProps={transformProps} />
+        <>
+          <TransformActions
+            data={GroupTitles}
+            transformProps={transformProps}
+          />
           <TransformComponent
             wrapperClass={styles.wrapperClass}
             contentClass={styles.contentClass}
           >
             <div className={styles.leaderShip}>
               <TeamCard
-                id={'leadership'}
+                id={GroupTitles.Leadership}
                 data={leadership}
                 transformProps={transformProps}
               />
             </div>
-            <div className={styles.chartWrapper}>
-              {Object.keys(team).map((teamKey) => (
-                <TeamCard
-                  id={teamKey}
-                  key={teamKey}
-                  data={MOCK_DATA[teamKey]}
-                  transformProps={transformProps}
-                />
-              ))}
-            </div>
+            {/*<div className={styles.chartWrapper}>*/}
+            {/*  {Object.keys(team).map((teamKey) => (*/}
+            {/*    <TeamCard*/}
+            {/*      id={teamKey}*/}
+            {/*      key={teamKey}*/}
+            {/*      data={MOCK_DATA[teamKey]}*/}
+            {/*      transformProps={transformProps}*/}
+            {/*    />*/}
+            {/*  ))}*/}
+            {/*</div>*/}
           </TransformComponent>
-        </React.Fragment>
+        </>
       )}
     </TransformWrapper>
   );

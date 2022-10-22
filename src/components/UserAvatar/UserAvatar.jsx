@@ -24,13 +24,9 @@ export const UserAvatar = ({ user, transformProps }) => {
     );
   }, [user]);
 
-  useDebouncedEffect(
-    () => {
-      setClassNameSize(getScaleSizeClassNameByScale(scale));
-    },
-    [scale],
-    100
-  );
+  useDebouncedEffect(() => {
+    setClassNameSize(getScaleSizeClassNameByScale(scale));
+  }, [scale]);
 
   return (
     <div className={cx(styles.avatar, styles[classNameSize])}>

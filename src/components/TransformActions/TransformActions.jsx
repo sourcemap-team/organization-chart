@@ -1,28 +1,39 @@
-import styles from './TransformActions.module.scss';
 import React from 'react';
-import { LARGE_SCALE } from '../../constants/TransformParams';
+
+import {
+  LARGE_SCALE,
+  MIDDLE_SCALE,
+  MIN_SCALE,
+} from '../../constants/TransformParams';
+
+import styles from './TransformActions.module.scss';
+import { GroupTitles } from '../../constants/OrgStructure';
 
 export const TransformActions = ({ transformProps, data }) => {
   const { zoomToElement, zoomIn } = transformProps;
-  const teamIds = Object.keys(data);
+  const teamIds = Object.values(data);
 
   const moveToTeamCard = (teamId) => {
-    zoomIn(LARGE_SCALE, 100);
+    zoomIn(MIN_SCALE, 100);
     setTimeout(() => {
-      zoomToElement(teamId, LARGE_SCALE, 200);
+      zoomToElement(
+        teamId,
+        teamId === GroupTitles.Leadership ? MIDDLE_SCALE : LARGE_SCALE,
+        200
+      );
     }, 200);
   };
 
   return (
     <div>
       <div className={styles.teamNavigator}>
-        {teamIds.map((teamId) => (
+        {teamIds.map((teamId, idx) => (
           <div
             key={teamId}
             className={styles.teamLabel}
             onClick={() => moveToTeamCard(teamId)}
           >
-            {data[teamId].title}
+            {teamId}
           </div>
         ))}
       </div>

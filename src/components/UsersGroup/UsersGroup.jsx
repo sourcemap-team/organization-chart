@@ -18,13 +18,9 @@ export const UsersGroup = ({
     getScaleSizeClassNameByScale(scale)
   );
 
-  useDebouncedEffect(
-    () => {
-      setClassNameSize(getScaleSizeClassNameByScale(scale));
-    },
-    [scale],
-    100
-  );
+  useDebouncedEffect(() => {
+    setClassNameSize(getScaleSizeClassNameByScale(scale));
+  }, [scale]);
 
   const theme = deep % 2 === 1 ? 'gray' : 'white';
 

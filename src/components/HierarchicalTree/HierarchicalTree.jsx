@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Tree, TreeNode } from 'react-organizational-chart';
-import { Users } from '../Users/Users';
+import cn from 'classnames';
 
-const TreeGroup = ({ group, transformProps }) => {
+import { Users } from '../Users/Users';
+import { LARGE_SCALE, SIZES } from '../../constants/TransformParams';
+
+import styles from './HeirarchicalTree.module.scss';
+
+const TreeGroup = ({ id, group, transformProps }) => {
+  const {
+    zoomToElement,
+    resetTransform,
+    state: { scale },
+  } = transformProps;
   const { users, groups } = group;
+
+  const groupClassName = useMemo(
+    () => group?.settings?.className,
+    [group?.settings?.className]
+  );
+
+  const handleDoubleClick = () => {
+    return scale >= SIZES.M
+      ? resetTransform()
+      : zoomToElement(group.id, LARGE_SCALE, 300);
+  };
 
   return (
     <TreeNode
       label={
-        <Users hierarchical users={users} transformProps={transformProps} />
+        <>
+          {group.title && <h3 id={id}>{group.title}</h3>}
+          <Users hierarchical users={users} transformProps={transformProps} />
+        </>
       }
+      className={cn(styles.node, styles[groupClassName])}
+      onDoubleClick={handleDoubleClick}
     >
       {groups &&
         groups.map((group) => (
@@ -32,9 +58,10 @@ export const HierarchicalTree = ({ data, transformProps }) => {
         <Users hierarchical users={users} transformProps={transformProps} />
       }
     >
-      {groups.map((group) => (
+      {groups.map((group, idx) => (
         <TreeGroup
-          key={group.id}
+          id={group.id}
+          key={group.title + '-' + idx}
           group={group}
           transformProps={transformProps}
         />

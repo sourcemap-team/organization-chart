@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
-import styles from './Users.module.scss';
-import { getScaleSizeClassNameByScale } from '../../utils/scale';
-import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
+
 import { UserAvatar } from '../UserAvatar/UserAvatar';
+import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 import { SIZES_VALUES } from '../../constants/TransformParams';
+import { getScaleSizeClassNameByScale } from '../../utils/scale';
+
+import styles from './Users.module.scss';
 
 export const Users = ({ users, transformProps, hierarchical }) => {
   const { scale } = transformProps.state;
@@ -13,31 +15,27 @@ export const Users = ({ users, transformProps, hierarchical }) => {
   );
 
   const getMaxUsersLength = () => {
-    if (classNameSize === SIZES_VALUES.S) {
-      return 4;
-    }
+    if (classNameSize === SIZES_VALUES.S) return 3;
 
-    if (classNameSize === SIZES_VALUES.M) {
-      return users?.length || 0;
-    }
+    if (classNameSize === SIZES_VALUES.M) return 6;
 
-    if (classNameSize === SIZES_VALUES.L) {
-      return users?.length || 0;
-    }
+    return users?.length || 0;
   };
 
-  useDebouncedEffect(
-    () => {
-      setClassNameSize(getScaleSizeClassNameByScale(scale));
-    },
-    [scale],
-    100
-  );
+  useDebouncedEffect(() => {
+    setClassNameSize(getScaleSizeClassNameByScale(scale));
+  }, [scale]);
+
+  const totalUsers = users ? users.length : 0;
 
   const visibleUsers = users ? users.slice(0, getMaxUsersLength()) : [];
 
-  const hasHiddenUsers = users ? users.length > visibleUsers.length : false;
-  const hiddenUsersCount = users ? users.length - visibleUsers.length : 0;
+  const hasHiddenUsers = totalUsers > visibleUsers.length;
+
+  const hiddenUsersCount = useMemo(() => {
+    if (!hasHiddenUsers) return 0;
+    return totalUsers - visibleUsers.length;
+  }, [hasHiddenUsers, totalUsers, visibleUsers.length]);
 
   return (
     <div
@@ -58,7 +56,7 @@ export const Users = ({ users, transformProps, hierarchical }) => {
           );
         })}
       {hasHiddenUsers && (
-        <div className={styles.label}>{`+${hiddenUsersCount}`}</div>
+        <div className={styles.label}>+ {hiddenUsersCount}</div>
       )}
     </div>
   );
