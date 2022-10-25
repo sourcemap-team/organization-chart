@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from './OrgChart.module.scss';
 
@@ -15,8 +15,15 @@ import {
   DOUBLE_CLICK_STEP,
 } from '../../constants/TransformParams';
 import { MOCK_DATA_BACK } from '../../constants/OrgStructure';
+import { fetchOrgChartData } from '../../api';
 
 export const OrgChart = () => {
+  const [orgChartData, setOrgChartData] = useState([]);
+
+  useEffect(() => {
+    fetchOrgChartData().then(setOrgChartData);
+  }, []);
+
   const leaderShip = MOCK_DATA_BACK.find((group) => group.type === 'Virtual');
   const otherGroups = MOCK_DATA_BACK.filter(
     (group) => group.type !== 'Virtual'

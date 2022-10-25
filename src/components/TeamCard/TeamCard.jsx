@@ -9,7 +9,8 @@ import { Users } from '../Users/Users';
 import { HierarchicalTree } from '../HierarchicalTree/HierarchicalTree';
 
 export const TeamCard = ({ id, data, transformProps }) => {
-  const { users, name, groups, type } = data;
+  const { users, settings, name, groups, type } = data;
+  const { background } = settings;
   const { zoomToElement, resetTransform, state } = transformProps;
   const { scale } = state;
 
@@ -37,7 +38,7 @@ export const TeamCard = ({ id, data, transformProps }) => {
       id={id}
       className={cx(styles.card, styles[classNameSize])}
       onDoubleClick={handleDoubleClick}
-      style={{ backgroundColor: '#eee' }}
+      style={{ backgroundColor: background }}
     >
       <h3>{name}</h3>
       {hasHierarchicalType ? (

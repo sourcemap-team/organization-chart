@@ -2,82 +2,278 @@
 
 export const MOCK_DATA_BACK = [
   {
-    id: 2,
-    name: 'Leaderhip team',
-    type: 'Virtual',
-    groups: [],
+    id: 8,
+    name: 'Data Analytics',
+    type: 'Hierarchical',
+    settings: { background: '#FFE287' },
+    groups: [
+      {
+        id: 9,
+        name: 'Data Analytics 1',
+        type: 'Hierarchical',
+        settings: { background: null },
+        groups: [
+          {
+            id: 11,
+            name: 'Data Analytics 1_1',
+            type: 'Hierarchical',
+            settings: { background: null },
+            groups: [
+              {
+                id: 8,
+                name: 'Analytics 1',
+                users: [
+                  {
+                    id: 314,
+                    fullName:
+                      '\u0413\u0443\u0441\u0435\u0432 \u041a\u0438\u0440\u0438\u043b\u043b',
+                    avatar: 'https://randomuser.me/api/portraits/men/57.jpg',
+                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+                    type: 'employee',
+                  },
+                  {
+                    id: 315,
+                    fullName:
+                      '\u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d\u043e\u0432 \u0422\u0438\u043c\u0443\u0440',
+                    avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
+                    role: 'Design',
+                    type: 'employee',
+                  },
+                  {
+                    id: 316,
+                    fullName:
+                      '\u041a\u043e\u0440\u043d\u0438\u043b\u043e\u0432\u0430 \u0410\u043b\u0438\u0441\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/98.jpg',
+                    role: 'Backend',
+                    type: 'employee',
+                  },
+                  {
+                    id: 317,
+                    fullName:
+                      '\u0421\u0442\u0435\u043f\u0430\u043d\u043e\u0432\u0430 \u041c\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/37.jpg',
+                    role: 'Design',
+                    type: 'employee',
+                  },
+                  {
+                    id: 318,
+                    fullName:
+                      '\u041a\u043e\u043d\u043e\u043d\u043e\u0432\u0430 \u0412\u0430\u043b\u0435\u0440\u0438\u044f',
+                    avatar: 'https://randomuser.me/api/portraits/men/7.jpg',
+                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+                    type: 'employee',
+                  },
+                  {
+                    id: 319,
+                    fullName:
+                      '\u041a\u043e\u043b\u0435\u0441\u043d\u0438\u043a\u043e\u0432\u0430 \u0412\u0430\u0440\u0432\u0430\u0440\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/71.jpg',
+                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+                    type: 'employee',
+                  },
+                  {
+                    id: 320,
+                    fullName:
+                      '\u0422\u0438\u0442\u043e\u0432\u0430 \u0412\u0438\u043a\u0442\u043e\u0440\u0438\u044f',
+                    avatar: 'https://randomuser.me/api/portraits/men/38.jpg',
+                    role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+                    type: 'employee',
+                  },
+                ],
+              },
+            ],
+            users: [
+              {
+                id: 367,
+                fullName:
+                  '\u0421\u043c\u0438\u0440\u043d\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430',
+                avatar: 'https://randomuser.me/api/portraits/men/67.jpg',
+                role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+                type: 'head',
+              },
+            ],
+          },
+          {
+            id: 12,
+            name: 'Data Analytics 1_2',
+            type: 'Hierarchical',
+            settings: { background: null },
+            groups: [
+              {
+                id: 9,
+                name: 'Analytics 2',
+                users: [
+                  {
+                    id: 321,
+                    fullName:
+                      '\u0421\u0430\u0437\u043e\u043d\u043e\u0432\u0430 \u041a\u0441\u0435\u043d\u0438\u044f',
+                    avatar: 'https://randomuser.me/api/portraits/men/55.jpg',
+                    role: 'Backend',
+                    type: 'employee',
+                  },
+                  {
+                    id: 322,
+                    fullName:
+                      '\u041c\u0430\u0440\u0442\u044b\u043d\u043e\u0432 \u0413\u0435\u043e\u0440\u0433\u0438\u0439',
+                    avatar: 'https://randomuser.me/api/portraits/men/22.jpg',
+                    role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+                    type: 'employee',
+                  },
+                  {
+                    id: 323,
+                    fullName:
+                      '\u041a\u0438\u0440\u0438\u043b\u043b\u043e\u0432 \u041d\u0438\u043a\u0438\u0442\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/58.jpg',
+                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+                    type: 'employee',
+                  },
+                  {
+                    id: 324,
+                    fullName:
+                      '\u041b\u0430\u0440\u0438\u043d\u0430 \u0412\u0435\u0440\u043e\u043d\u0438\u043a\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/87.jpg',
+                    role: 'Backend',
+                    type: 'employee',
+                  },
+                  {
+                    id: 325,
+                    fullName:
+                      '\u0424\u0438\u043b\u0438\u043c\u043e\u043d\u043e\u0432\u0430 \u0412\u0438\u043a\u0442\u043e\u0440\u0438\u044f',
+                    avatar: 'https://randomuser.me/api/portraits/men/41.jpg',
+                    role: 'Frontend',
+                    type: 'employee',
+                  },
+                  {
+                    id: 326,
+                    fullName:
+                      '\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/96.jpg',
+                    role: 'Design',
+                    type: 'employee',
+                  },
+                  {
+                    id: 327,
+                    fullName:
+                      '\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430',
+                    avatar: 'https://randomuser.me/api/portraits/men/61.jpg',
+                    role: 'Frontend',
+                    type: 'employee',
+                  },
+                ],
+              },
+            ],
+            users: [
+              {
+                id: 368,
+                fullName:
+                  '\u041c\u0443\u0440\u0430\u0432\u044c\u0435\u0432\u0430 \u0421\u043e\u0444\u0438\u044f',
+                avatar: 'https://randomuser.me/api/portraits/men/49.jpg',
+                role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+                type: 'head',
+              },
+            ],
+          },
+        ],
+        users: [
+          {
+            id: 365,
+            fullName:
+              '\u041c\u0430\u0442\u0432\u0435\u0435\u0432\u0430 \u041c\u0438\u0440\u043e\u0441\u043b\u0430\u0432\u0430',
+            avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
+            role: 'Backend',
+            type: 'head',
+          },
+        ],
+      },
+      {
+        id: 10,
+        name: 'Data Analytics 2',
+        type: 'Hierarchical',
+        settings: { background: null },
+        groups: [
+          {
+            id: 10,
+            name: 'Analytics 3',
+            users: [
+              {
+                id: 328,
+                fullName:
+                  '\u0413\u0440\u0438\u0448\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0435\u0439',
+                avatar: 'https://randomuser.me/api/portraits/men/62.jpg',
+                role: 'Backend',
+                type: 'employee',
+              },
+              {
+                id: 329,
+                fullName:
+                  '\u0410\u0444\u0430\u043d\u0430\u0441\u044c\u0435\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440',
+                avatar: 'https://randomuser.me/api/portraits/men/86.jpg',
+                role: 'Backend',
+                type: 'employee',
+              },
+              {
+                id: 330,
+                fullName:
+                  '\u0415\u043c\u0435\u043b\u044c\u044f\u043d\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440',
+                avatar: 'https://randomuser.me/api/portraits/men/85.jpg',
+                role: 'Design',
+                type: 'employee',
+              },
+              {
+                id: 331,
+                fullName:
+                  '\u0411\u0438\u0440\u044e\u043a\u043e\u0432 \u0410\u043d\u0434\u0440\u0435\u0439',
+                avatar: 'https://randomuser.me/api/portraits/men/71.jpg',
+                role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+                type: 'employee',
+              },
+              {
+                id: 332,
+                fullName:
+                  '\u0421\u0438\u0434\u043e\u0440\u043e\u0432 \u0421\u0435\u0440\u0433\u0435\u0439',
+                avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
+                role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+                type: 'employee',
+              },
+              {
+                id: 333,
+                fullName:
+                  '\u041a\u0438\u0441\u0435\u043b\u0435\u0432\u0430 \u041d\u0438\u043a\u0430',
+                avatar: 'https://randomuser.me/api/portraits/men/53.jpg',
+                role: 'Design',
+                type: 'employee',
+              },
+              {
+                id: 334,
+                fullName:
+                  '\u0421\u0430\u0444\u043e\u043d\u043e\u0432 \u0414\u0430\u043d\u0438\u0438\u043b',
+                avatar: 'https://randomuser.me/api/portraits/men/29.jpg',
+                role: 'Backend',
+                type: 'employee',
+              },
+            ],
+          },
+        ],
+        users: [
+          {
+            id: 366,
+            fullName:
+              '\u041f\u0435\u0442\u0440\u043e\u0432\u0430 \u0410\u043b\u0438\u0441\u0430',
+            avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
+            role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+            type: 'head',
+          },
+        ],
+      },
+    ],
     users: [
       {
-        id: 335,
+        id: 364,
         fullName:
-          '\u041c\u0430\u0442\u0432\u0435\u0435\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430',
-        avatar: 'https://randomuser.me/api/portraits/men/67.jpg',
-        role: 'Backend',
-        type: 'employee',
-      },
-      {
-        id: 336,
-        fullName:
-          '\u0412\u043e\u0440\u043e\u043d\u0438\u043d\u0430 \u0415\u0432\u0430',
-        avatar: 'https://randomuser.me/api/portraits/men/8.jpg',
-        role: 'Backend',
-        type: 'employee',
-      },
-      {
-        id: 337,
-        fullName:
-          '\u0414\u0440\u043e\u0437\u0434\u043e\u0432 \u0412\u0430\u0434\u0438\u043c',
-        avatar: 'https://randomuser.me/api/portraits/men/18.jpg',
-        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-        type: 'employee',
-      },
-      {
-        id: 338,
-        fullName:
-          '\u041d\u043e\u0432\u0438\u043a\u043e\u0432 \u0424\u0451\u0434\u043e\u0440',
-        avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
-        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-        type: 'employee',
-      },
-      {
-        id: 339,
-        fullName:
-          '\u0412\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u043e\u0432 \u0418\u043b\u044c\u044f',
-        avatar: 'https://randomuser.me/api/portraits/men/95.jpg',
-        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-        type: 'employee',
-      },
-      {
-        id: 340,
-        fullName:
-          '\u041a\u043b\u0438\u043c\u043e\u0432\u0430 \u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430',
-        avatar: 'https://randomuser.me/api/portraits/men/27.jpg',
-        role: 'Frontend',
-        type: 'employee',
-      },
-      {
-        id: 341,
-        fullName:
-          '\u041f\u043e\u043f\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440',
-        avatar: 'https://randomuser.me/api/portraits/men/75.jpg',
-        role: 'Design',
-        type: 'employee',
-      },
-      {
-        id: 342,
-        fullName:
-          '\u0411\u0430\u043b\u0430\u0448\u043e\u0432\u0430 \u042e\u043b\u0438\u044f',
-        avatar: 'https://randomuser.me/api/portraits/men/81.jpg',
-        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-        type: 'employee',
-      },
-      {
-        id: 343,
-        fullName:
-          '\u041e\u0440\u043b\u043e\u0432 \u0414\u0430\u043d\u0438\u0438\u043b',
-        avatar: 'https://randomuser.me/api/portraits/men/30.jpg',
-        role: 'Frontend',
-        type: 'employee',
+          '\u041c\u0430\u043a\u0430\u0440\u043e\u0432\u0430 \u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430',
+        avatar: 'https://randomuser.me/api/portraits/men/54.jpg',
+        role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
+        type: 'head',
       },
     ],
   },
@@ -85,11 +281,13 @@ export const MOCK_DATA_BACK = [
     id: 3,
     name: 'Product group',
     type: 'Product',
+    settings: { background: '#CDEFC5' },
     groups: [
       {
         id: 4,
         name: 'Inbox',
         type: 'Product',
+        settings: { background: null },
         groups: [
           {
             id: 1,
@@ -295,6 +493,7 @@ export const MOCK_DATA_BACK = [
         id: 5,
         name: 'Marketing Automation',
         type: 'Product',
+        settings: { background: null },
         groups: [
           {
             id: 3,
@@ -398,6 +597,7 @@ export const MOCK_DATA_BACK = [
         id: 6,
         name: 'Super Puper',
         type: 'Product',
+        settings: { background: null },
         groups: [
           {
             id: 4,
@@ -625,6 +825,7 @@ export const MOCK_DATA_BACK = [
         id: 7,
         name: 'New group',
         type: 'Product',
+        settings: { background: null },
         groups: [
           {
             id: 7,
@@ -761,273 +962,83 @@ export const MOCK_DATA_BACK = [
     ],
   },
   {
-    id: 8,
-    name: 'Data Analytics',
-    type: 'Hierarchical',
-    groups: [
-      {
-        id: 9,
-        name: 'Data Analytics 1',
-        type: 'Hierarchical',
-        groups: [
-          {
-            id: 11,
-            name: 'Data Analytics 1_1',
-            type: 'Hierarchical',
-            groups: [
-              {
-                id: 8,
-                name: 'Analytics 1',
-                users: [
-                  {
-                    id: 314,
-                    fullName:
-                      '\u0413\u0443\u0441\u0435\u0432 \u041a\u0438\u0440\u0438\u043b\u043b',
-                    avatar: 'https://randomuser.me/api/portraits/men/57.jpg',
-                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-                    type: 'employee',
-                  },
-                  {
-                    id: 315,
-                    fullName:
-                      '\u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d\u043e\u0432 \u0422\u0438\u043c\u0443\u0440',
-                    avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
-                    role: 'Design',
-                    type: 'employee',
-                  },
-                  {
-                    id: 316,
-                    fullName:
-                      '\u041a\u043e\u0440\u043d\u0438\u043b\u043e\u0432\u0430 \u0410\u043b\u0438\u0441\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/98.jpg',
-                    role: 'Backend',
-                    type: 'employee',
-                  },
-                  {
-                    id: 317,
-                    fullName:
-                      '\u0421\u0442\u0435\u043f\u0430\u043d\u043e\u0432\u0430 \u041c\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/37.jpg',
-                    role: 'Design',
-                    type: 'employee',
-                  },
-                  {
-                    id: 318,
-                    fullName:
-                      '\u041a\u043e\u043d\u043e\u043d\u043e\u0432\u0430 \u0412\u0430\u043b\u0435\u0440\u0438\u044f',
-                    avatar: 'https://randomuser.me/api/portraits/men/7.jpg',
-                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-                    type: 'employee',
-                  },
-                  {
-                    id: 319,
-                    fullName:
-                      '\u041a\u043e\u043b\u0435\u0441\u043d\u0438\u043a\u043e\u0432\u0430 \u0412\u0430\u0440\u0432\u0430\u0440\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/71.jpg',
-                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-                    type: 'employee',
-                  },
-                  {
-                    id: 320,
-                    fullName:
-                      '\u0422\u0438\u0442\u043e\u0432\u0430 \u0412\u0438\u043a\u0442\u043e\u0440\u0438\u044f',
-                    avatar: 'https://randomuser.me/api/portraits/men/38.jpg',
-                    role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-                    type: 'employee',
-                  },
-                ],
-              },
-            ],
-            users: [
-              {
-                id: 367,
-                fullName:
-                  '\u0421\u043c\u0438\u0440\u043d\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430',
-                avatar: 'https://randomuser.me/api/portraits/men/67.jpg',
-                role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-                type: 'head',
-              },
-            ],
-          },
-          {
-            id: 12,
-            name: 'Data Analytics 1_2',
-            type: 'Hierarchical',
-            groups: [
-              {
-                id: 9,
-                name: 'Analytics 2',
-                users: [
-                  {
-                    id: 321,
-                    fullName:
-                      '\u0421\u0430\u0437\u043e\u043d\u043e\u0432\u0430 \u041a\u0441\u0435\u043d\u0438\u044f',
-                    avatar: 'https://randomuser.me/api/portraits/men/55.jpg',
-                    role: 'Backend',
-                    type: 'employee',
-                  },
-                  {
-                    id: 322,
-                    fullName:
-                      '\u041c\u0430\u0440\u0442\u044b\u043d\u043e\u0432 \u0413\u0435\u043e\u0440\u0433\u0438\u0439',
-                    avatar: 'https://randomuser.me/api/portraits/men/22.jpg',
-                    role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-                    type: 'employee',
-                  },
-                  {
-                    id: 323,
-                    fullName:
-                      '\u041a\u0438\u0440\u0438\u043b\u043b\u043e\u0432 \u041d\u0438\u043a\u0438\u0442\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/58.jpg',
-                    role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-                    type: 'employee',
-                  },
-                  {
-                    id: 324,
-                    fullName:
-                      '\u041b\u0430\u0440\u0438\u043d\u0430 \u0412\u0435\u0440\u043e\u043d\u0438\u043a\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/87.jpg',
-                    role: 'Backend',
-                    type: 'employee',
-                  },
-                  {
-                    id: 325,
-                    fullName:
-                      '\u0424\u0438\u043b\u0438\u043c\u043e\u043d\u043e\u0432\u0430 \u0412\u0438\u043a\u0442\u043e\u0440\u0438\u044f',
-                    avatar: 'https://randomuser.me/api/portraits/men/41.jpg',
-                    role: 'Frontend',
-                    type: 'employee',
-                  },
-                  {
-                    id: 326,
-                    fullName:
-                      '\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0430 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/96.jpg',
-                    role: 'Design',
-                    type: 'employee',
-                  },
-                  {
-                    id: 327,
-                    fullName:
-                      '\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430',
-                    avatar: 'https://randomuser.me/api/portraits/men/61.jpg',
-                    role: 'Frontend',
-                    type: 'employee',
-                  },
-                ],
-              },
-            ],
-            users: [
-              {
-                id: 368,
-                fullName:
-                  '\u041c\u0443\u0440\u0430\u0432\u044c\u0435\u0432\u0430 \u0421\u043e\u0444\u0438\u044f',
-                avatar: 'https://randomuser.me/api/portraits/men/49.jpg',
-                role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-                type: 'head',
-              },
-            ],
-          },
-        ],
-        users: [
-          {
-            id: 365,
-            fullName:
-              '\u041c\u0430\u0442\u0432\u0435\u0435\u0432\u0430 \u041c\u0438\u0440\u043e\u0441\u043b\u0430\u0432\u0430',
-            avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
-            role: 'Backend',
-            type: 'head',
-          },
-        ],
-      },
-      {
-        id: 10,
-        name: 'Data Analytics 2',
-        type: 'Hierarchical',
-        groups: [
-          {
-            id: 10,
-            name: 'Analytics 3',
-            users: [
-              {
-                id: 328,
-                fullName:
-                  '\u0413\u0440\u0438\u0448\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0435\u0439',
-                avatar: 'https://randomuser.me/api/portraits/men/62.jpg',
-                role: 'Backend',
-                type: 'employee',
-              },
-              {
-                id: 329,
-                fullName:
-                  '\u0410\u0444\u0430\u043d\u0430\u0441\u044c\u0435\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440',
-                avatar: 'https://randomuser.me/api/portraits/men/86.jpg',
-                role: 'Backend',
-                type: 'employee',
-              },
-              {
-                id: 330,
-                fullName:
-                  '\u0415\u043c\u0435\u043b\u044c\u044f\u043d\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440',
-                avatar: 'https://randomuser.me/api/portraits/men/85.jpg',
-                role: 'Design',
-                type: 'employee',
-              },
-              {
-                id: 331,
-                fullName:
-                  '\u0411\u0438\u0440\u044e\u043a\u043e\u0432 \u0410\u043d\u0434\u0440\u0435\u0439',
-                avatar: 'https://randomuser.me/api/portraits/men/71.jpg',
-                role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-                type: 'employee',
-              },
-              {
-                id: 332,
-                fullName:
-                  '\u0421\u0438\u0434\u043e\u0440\u043e\u0432 \u0421\u0435\u0440\u0433\u0435\u0439',
-                avatar: 'https://randomuser.me/api/portraits/men/45.jpg',
-                role: '\u042e\u0440\u0438\u0441\u0442\u044b',
-                type: 'employee',
-              },
-              {
-                id: 333,
-                fullName:
-                  '\u041a\u0438\u0441\u0435\u043b\u0435\u0432\u0430 \u041d\u0438\u043a\u0430',
-                avatar: 'https://randomuser.me/api/portraits/men/53.jpg',
-                role: 'Design',
-                type: 'employee',
-              },
-              {
-                id: 334,
-                fullName:
-                  '\u0421\u0430\u0444\u043e\u043d\u043e\u0432 \u0414\u0430\u043d\u0438\u0438\u043b',
-                avatar: 'https://randomuser.me/api/portraits/men/29.jpg',
-                role: 'Backend',
-                type: 'employee',
-              },
-            ],
-          },
-        ],
-        users: [
-          {
-            id: 366,
-            fullName:
-              '\u041f\u0435\u0442\u0440\u043e\u0432\u0430 \u0410\u043b\u0438\u0441\u0430',
-            avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
-            role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-            type: 'head',
-          },
-        ],
-      },
-    ],
+    id: 2,
+    name: 'Leaderhip team',
+    type: 'Virtual',
+    settings: { background: '#DAF3FF' },
+    groups: [],
     users: [
       {
-        id: 364,
+        id: 335,
         fullName:
-          '\u041c\u0430\u043a\u0430\u0440\u043e\u0432\u0430 \u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430',
-        avatar: 'https://randomuser.me/api/portraits/men/54.jpg',
-        role: '\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u0442\u044b',
-        type: 'head',
+          '\u041c\u0430\u0442\u0432\u0435\u0435\u0432\u0430 \u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430',
+        avatar: 'https://randomuser.me/api/portraits/men/67.jpg',
+        role: 'Backend',
+        type: 'employee',
+      },
+      {
+        id: 336,
+        fullName:
+          '\u0412\u043e\u0440\u043e\u043d\u0438\u043d\u0430 \u0415\u0432\u0430',
+        avatar: 'https://randomuser.me/api/portraits/men/8.jpg',
+        role: 'Backend',
+        type: 'employee',
+      },
+      {
+        id: 337,
+        fullName:
+          '\u0414\u0440\u043e\u0437\u0434\u043e\u0432 \u0412\u0430\u0434\u0438\u043c',
+        avatar: 'https://randomuser.me/api/portraits/men/18.jpg',
+        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+        type: 'employee',
+      },
+      {
+        id: 338,
+        fullName:
+          '\u041d\u043e\u0432\u0438\u043a\u043e\u0432 \u0424\u0451\u0434\u043e\u0440',
+        avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
+        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+        type: 'employee',
+      },
+      {
+        id: 339,
+        fullName:
+          '\u0412\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u043e\u0432 \u0418\u043b\u044c\u044f',
+        avatar: 'https://randomuser.me/api/portraits/men/95.jpg',
+        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+        type: 'employee',
+      },
+      {
+        id: 340,
+        fullName:
+          '\u041a\u043b\u0438\u043c\u043e\u0432\u0430 \u0415\u043b\u0438\u0437\u0430\u0432\u0435\u0442\u0430',
+        avatar: 'https://randomuser.me/api/portraits/men/27.jpg',
+        role: 'Frontend',
+        type: 'employee',
+      },
+      {
+        id: 341,
+        fullName:
+          '\u041f\u043e\u043f\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440',
+        avatar: 'https://randomuser.me/api/portraits/men/75.jpg',
+        role: 'Design',
+        type: 'employee',
+      },
+      {
+        id: 342,
+        fullName:
+          '\u0411\u0430\u043b\u0430\u0448\u043e\u0432\u0430 \u042e\u043b\u0438\u044f',
+        avatar: 'https://randomuser.me/api/portraits/men/81.jpg',
+        role: '\u042e\u0440\u0438\u0441\u0442\u044b',
+        type: 'employee',
+      },
+      {
+        id: 343,
+        fullName:
+          '\u041e\u0440\u043b\u043e\u0432 \u0414\u0430\u043d\u0438\u0438\u043b',
+        avatar: 'https://randomuser.me/api/portraits/men/30.jpg',
+        role: 'Frontend',
+        type: 'employee',
       },
     ],
   },
