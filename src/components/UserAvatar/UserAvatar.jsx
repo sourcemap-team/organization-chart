@@ -15,7 +15,7 @@ export const UserAvatar = ({ user, transformProps }) => {
   );
 
   const jsxUserName = useMemo(() => {
-    const [first, last] = user.userName.split(' ');
+    const [first, last] = user.fullName.split(' ');
     return (
       <>
         <span>{first}</span>
@@ -35,7 +35,10 @@ export const UserAvatar = ({ user, transformProps }) => {
   return (
     <div className={cx(styles.avatar, styles[classNameSize])}>
       <img
-        src={`https://randomuser.me/api/portraits/men/${user.id}.jpg`}
+        src={
+          user.avatar ||
+          `https://randomuser.me/api/portraits/men/${user.id}.jpg`
+        }
         alt={user.userName}
       />
       {showUserInfo && (

@@ -9,10 +9,11 @@ import { Users } from '../Users/Users';
 import { HierarchicalTree } from '../HierarchicalTree/HierarchicalTree';
 
 export const TeamCard = ({ id, data, transformProps }) => {
-  const { settings, users, title, groups, hierarchical } = data;
+  const { users, name, groups, type } = data;
   const { zoomToElement, resetTransform, state } = transformProps;
   const { scale } = state;
-  const { background } = settings;
+
+  const hasHierarchicalType = type === 'Hierarchical';
 
   const [classNameSize, setClassNameSize] = useState(
     getScaleSizeClassNameByScale(state.scale)
@@ -36,10 +37,10 @@ export const TeamCard = ({ id, data, transformProps }) => {
       id={id}
       className={cx(styles.card, styles[classNameSize])}
       onDoubleClick={handleDoubleClick}
-      style={{ backgroundColor: background }}
+      style={{ backgroundColor: '#eee' }}
     >
-      <h3>{title}</h3>
-      {hierarchical ? (
+      <h3>{name}</h3>
+      {hasHierarchicalType ? (
         <div>
           <HierarchicalTree data={data} transformProps={transformProps} />
         </div>
@@ -53,8 +54,8 @@ export const TeamCard = ({ id, data, transformProps }) => {
                 <UsersGroup
                   key={group.id}
                   deep={0}
-                  hierarchical={hierarchical}
-                  title={group.title}
+                  hierarchical={hasHierarchicalType}
+                  name={group.name}
                   users={group.users}
                   groups={group.groups}
                   transformProps={transformProps}

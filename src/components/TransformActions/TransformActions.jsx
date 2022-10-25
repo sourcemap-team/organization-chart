@@ -4,25 +4,29 @@ import { LARGE_SCALE } from '../../constants/TransformParams';
 
 export const TransformActions = ({ transformProps, data }) => {
   const { zoomToElement, zoomIn } = transformProps;
-  const teamIds = Object.keys(data);
+  const groupIds = data.map((group) => group.name);
 
-  const moveToTeamCard = (teamId) => {
+  const getGroupNameByGroupId = (id) => {
+    return data.find((group) => group.name === id).name;
+  };
+
+  const moveToTeamCard = (groupId) => {
     zoomIn(LARGE_SCALE, 100);
     setTimeout(() => {
-      zoomToElement(teamId, LARGE_SCALE, 200);
+      zoomToElement(groupId, LARGE_SCALE, 200);
     }, 200);
   };
 
   return (
     <div>
       <div className={styles.teamNavigator}>
-        {teamIds.map((teamId) => (
+        {groupIds.map((groupId) => (
           <div
-            key={teamId}
+            key={groupId}
             className={styles.teamLabel}
-            onClick={() => moveToTeamCard(teamId)}
+            onClick={() => moveToTeamCard(groupId)}
           >
-            {data[teamId].title}
+            {getGroupNameByGroupId(groupId)}
           </div>
         ))}
       </div>

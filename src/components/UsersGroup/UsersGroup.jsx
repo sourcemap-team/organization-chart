@@ -6,7 +6,7 @@ import { useDebouncedEffect } from '../../hooks/useDebouncedEffect';
 import { Users } from '../Users/Users';
 
 export const UsersGroup = ({
-  title,
+  name,
   users,
   groups,
   transformProps,
@@ -32,7 +32,7 @@ export const UsersGroup = ({
     <div
       className={cx(styles.groupWrapper, styles[classNameSize], styles[theme])}
     >
-      <h4>{title}</h4>
+      <h4>{name}</h4>
       <div className={styles.group}>
         <Users users={users} transformProps={transformProps} />
         <div className={styles.groupsWrapper}>
@@ -41,7 +41,7 @@ export const UsersGroup = ({
               <UsersGroup
                 hierarchical={hierarchical}
                 key={group.id}
-                title={group.title}
+                name={group.name}
                 users={group.users}
                 deep={deep + 1}
                 groups={group.groups}

@@ -14,10 +14,14 @@ import {
   INITIAL_SCALE,
   DOUBLE_CLICK_STEP,
 } from '../../constants/TransformParams';
-import { MOCK_DATA } from '../../constants/OrgStructure';
+import { MOCK_DATA_BACK } from '../../constants/OrgStructure';
 
 export const OrgChart = () => {
-  const { leadership, ...team } = MOCK_DATA;
+  const leaderShip = MOCK_DATA_BACK.find((group) => group.type === 'Virtual');
+  const otherGroups = MOCK_DATA_BACK.filter(
+    (group) => group.type !== 'Virtual'
+  );
+
   return (
     <TransformWrapper
       initialScale={INITIAL_SCALE}
@@ -35,24 +39,27 @@ export const OrgChart = () => {
     >
       {(transformProps) => (
         <React.Fragment>
-          <TransformActions data={MOCK_DATA} transformProps={transformProps} />
+          <TransformActions
+            data={MOCK_DATA_BACK}
+            transformProps={transformProps}
+          />
           <TransformComponent
             wrapperClass={styles.wrapperClass}
             contentClass={styles.contentClass}
           >
             <div className={styles.leaderShip}>
               <TeamCard
-                id={'leadership'}
-                data={leadership}
+                id={leaderShip.name}
+                data={leaderShip}
                 transformProps={transformProps}
               />
             </div>
             <div className={styles.chartWrapper}>
-              {Object.keys(team).map((teamKey) => (
+              {otherGroups.map((group) => (
                 <TeamCard
-                  id={teamKey}
-                  key={teamKey}
-                  data={MOCK_DATA[teamKey]}
+                  id={group.name}
+                  key={group.id}
+                  data={group}
                   transformProps={transformProps}
                 />
               ))}
