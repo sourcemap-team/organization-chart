@@ -3,13 +3,20 @@
   padding: 12px;
   transition: ease-in 200ms;
   will-change: height;
+  width: 100%;
+
+  &:last-child:nth-child(2n + 1) {
+    grid-column: 1 / 3;
+    place-self: center;
+    width: 50%;
+  }
 
   &.gray {
-    background: #F7F7F7;
+    background: #f7f7f7;
   }
 
   &.white {
-    background: #FFFFFF;
+    background: #ffffff;
   }
 
   h4 {
@@ -31,6 +38,8 @@
 }
 
 .groupsWrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  width: 100%;
 }

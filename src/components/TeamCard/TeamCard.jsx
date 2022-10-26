@@ -46,7 +46,7 @@ export const TeamCard = ({ id, data, transformProps }) => {
           <HierarchicalTree data={data} transformProps={transformProps} />
         </div>
       ) : (
-        <div>
+        <>
           <Users users={users} transformProps={transformProps} />
 
           {Array.isArray(groups) && groups.length > 1 && (
@@ -64,7 +64,7 @@ export const TeamCard = ({ id, data, transformProps }) => {
               ))}
             </div>
           )}
-        </div>
+        </>
       )}
     </div>
   );

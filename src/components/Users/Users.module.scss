@@ -1,26 +1,28 @@
 .users {
   gap: 4px;
   display: flex;
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
   justify-content: center;
+  width: 100%;
 
   &.hierarchical {
     margin-bottom: 0 !important;
   }
 
-
   &.s {
-    margin-bottom: 8px;
+    max-width: 220px;
   }
 
   &.m {
     margin-bottom: 16px;
     flex-wrap: wrap;
+    max-width: 300px;
   }
 
   &.l {
     margin-bottom: 24px;
     flex-wrap: wrap;
+    max-width: 600px;
   }
 }
 
@@ -31,5 +33,5 @@
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background: #FFFFFF;
+  background: #ffffff;
 }
