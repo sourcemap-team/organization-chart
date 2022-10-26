@@ -1,6 +1,8 @@
-import styles from './TransformActions.module.scss';
 import React from 'react';
+
 import { LARGE_SCALE } from '../../constants/TransformParams';
+
+import styles from './TransformActions.module.scss';
 
 export const TransformActions = ({ transformProps, data }) => {
   const { zoomToElement, zoomIn } = transformProps;
