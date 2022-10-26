@@ -10,6 +10,10 @@ export const fetchOrgChartData = async () => {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
+      auth: {
+        username: process.env.REACT_APP_LOGIN,
+        password: process.env.REACT_APP_PASSWORD,
+      },
     });
 
     return data;
