@@ -7,10 +7,6 @@ const instance = axios.create({
 export const fetchOrgChartData = async () => {
   try {
     const { data } = await instance.get('/orgchart/data', {
-      auth: {
-        username: process.env.REACT_APP_LOGIN,
-        password: process.env.REACT_APP_PASSWORD,
-      },
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
