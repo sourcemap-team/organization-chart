@@ -13,7 +13,7 @@ const TreeGroup = ({ group, transformProps }) => {
     >
       {groups &&
         groups.map((group) => (
-          <Tree //TreeGroup
+          <TreeGroup
             key={group.id}
             group={group}
             transformProps={transformProps}
