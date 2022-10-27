@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import styles from './OrgChart.module.scss';
 
@@ -14,26 +14,10 @@ import {
   INITIAL_SCALE,
   DOUBLE_CLICK_STEP,
 } from '../../constants/TransformParams';
-import { fetchOrgChartData } from '../../api';
+import { MOCK_DATA_BACK } from '../../constants/OrgStructure';
 
 export const OrgChart = () => {
-  const [orgChartData, setOrgChartData] = useState([]);
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
-
-  useEffect(() => {
-    fetchOrgChartData()
-      .then((data) => {
-        setOrgChartData(data);
-        setIsDataLoaded(true);
-      })
-      .catch((err) => {
-        setIsDataLoaded(false);
-      });
-  }, []);
-
-  if (!isDataLoaded) {
-    return <></>;
-  }
+  const orgChartData = MOCK_DATA_BACK;
 
   const leaderShip = orgChartData.find((group) => group.type === 'Virtual');
   const otherGroups = orgChartData.filter((group) => group.type !== 'Virtual');
