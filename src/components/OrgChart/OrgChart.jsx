@@ -14,20 +14,29 @@ import {
   INITIAL_SCALE,
   DOUBLE_CLICK_STEP,
 } from '../../constants/TransformParams';
-import { MOCK_DATA_BACK } from '../../constants/OrgStructure';
 import { fetchOrgChartData } from '../../api';
 
 export const OrgChart = () => {
   const [orgChartData, setOrgChartData] = useState([]);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   useEffect(() => {
-    fetchOrgChartData().then(setOrgChartData);
+    fetchOrgChartData()
+      .then((data) => {
+        setOrgChartData(data);
+        setIsDataLoaded(true);
+      })
+      .catch((err) => {
+        setIsDataLoaded(false);
+      });
   }, []);
 
-  const leaderShip = MOCK_DATA_BACK.find((group) => group.type === 'Virtual');
-  const otherGroups = MOCK_DATA_BACK.filter(
-    (group) => group.type !== 'Virtual'
-  );
+  if (!isDataLoaded) {
+    return <></>;
+  }
+
+  const leaderShip = orgChartData.find((group) => group.type === 'Virtual');
+  const otherGroups = orgChartData.filter((group) => group.type !== 'Virtual');
 
   return (
     <TransformWrapper
@@ -47,7 +56,7 @@ export const OrgChart = () => {
       {(transformProps) => (
         <React.Fragment>
           <TransformActions
-            data={MOCK_DATA_BACK}
+            data={orgChartData}
             transformProps={transformProps}
           />
           <TransformComponent
@@ -57,7 +66,7 @@ export const OrgChart = () => {
             <div className={styles.leaderShip}>
               <TeamCard
                 id={leaderShip.name}
-                data={leaderShip}
+                data={orgChartData.find((group) => group.type === 'Virtual')}
                 transformProps={transformProps}
               />
             </div>
